@@ -114,39 +114,39 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
             标签： 数据库 的 数据表 杂谈	
             MySQL数据库查看数据库 数据表的命令。
             进入MySQL Command line client下查看当前使用的数据库:
-            `mysql>select database();`
+             mysql>select database();
             
-            `mysql>status;`
+             mysql>status;
             
-            `mysql>show tables;`
+             mysql>show tables;
             
-            `mysql>show databases;`  //可以查看有哪些数据库,返回数据库名(databaseName)
+             mysql>show databases;  //可以查看有哪些数据库,返回数据库名(databaseName)
+             
+            mysql>use databaseName;  //更换当前使用的数据库
             
-            `mysql>use databaseName;`   //更换当前使用的数据库
+             mysql>show tables;  //返回当前数据库下的所有表的名称
             
-            `mysql>show tables;`  //返回当前数据库下的所有表的名称
+             或者也可以直接用以下命令
+             mysql>show tables from databaseName; //databaseName可以用show databases得来
             
-            或者也可以直接用以下命令
-            `mysql>show tables from databaseName;` //databaseName可以用show databases得来
+             mysql查看表结构命令，如下:
+             desc 表名;
+             show columns from 表名;
             
-            mysql查看表结构命令，如下:
-            `desc 表名;`
-            `show columns from 表名;`
-            
-            或者 
-            `describe 表名;`
-           ` show create table 表名;`
+             或者 
+             describe 表名;
+             show create table 表名;
            
-            或者  
-            `use information_schemaselect * from columns where table_name='表名';`
+             或者  
+             use information_schemaselect * from columns where table_name='表名';
             
-            查看警告:
-            `mysql> show warnings;`
-            Rows matched: 1 Changed: 0 Warnings: 1
+             查看警告:
+             mysql> show warnings;
+             Rows matched: 1 Changed: 0 Warnings: 1
 
-      +---------+------+-------------------------------------------+
-      | Level | Code | Message |
-      +---------+------+-------------------------------------------+
-      | Warning | 1265 | Data truncated for column 'name' at row 3 |
-      +---------+------+-------------------------------------------+
-      1 row in set
+               +---------+------+-------------------------------------------+
+               | Level | Code | Message |
+               +---------+------+-------------------------------------------+
+               | Warning | 1265 | Data truncated for column 'name' at row 3 |
+               +---------+------+-------------------------------------------+
+               1 row in set
