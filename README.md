@@ -1,14 +1,14 @@
 # learn-git
 学习使用Clound9 - mysql
 
-1.Clound9网站MySQL配置
+###1.Clound9网站MySQL配置
       hostname: 127.0.0.1
       port：3306
       user： (注册名)
-      password:   (空）
+      password:   
       database: c9 (cloud9数据库自带的)
 
-2.在Terminal面板中启动和使用mysql的一般过程。
+###2.在Terminal面板中启动和使用mysql的一般过程。
       $ mysql-ctl install;   //安装mysql数据库，已经安装则不需要执行本语句
       
       $ mysql-ctl start;  //启动mysql. 第一次启动时会创建一个空数据库
@@ -21,9 +21,10 @@
       SHOW VARIABLES WHERE Variable_name = 'hostname';  //得到hostname
 
 
-3.测试连接数据库
+###3.测试连接数据库
+
       <?php
-     $con = mysqli_connect("127.0.0.1","a3zhangsen","","w3cPhpdb");//""代表密码为空，"w3cPhpdb"是数据库名
+     $con = mysqli_connect("127.0.0.1","用户名","密码","w3cPhpdb");//""代表密码为空，"w3cPhpdb"是数据库名
       if (!$con)
        {
             die('Could not connect: ' . mysql_error());
@@ -31,7 +32,6 @@
          echo "Connected successfully";
       $query = "SELECT * FROM users";
       $result = mysqli_query($con, $query);
-
        while ($row = mysqli_fetch_assoc($result)) {
               echo "The ID is: " . $row['id'] . " and the Username is: " . $row['username'];
       }
@@ -44,10 +44,8 @@
       if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
       } 
-
       $sql = "SELECT id,username FROM users";
       $result = $conn->query($sql);
-
       if ($result->num_rows > 0) {
           // 输出每行数据
              while($row = $result->fetch_assoc()) {
@@ -58,7 +56,7 @@
       }
       $conn->close();
 
-4.使用Cloud9数据库mysql的教程
+###4.使用Cloud9数据库mysql的教程
   (1) Set Up a Database ：https://docs.c9.io/v1.0/docs/setup-a-database
   (2) Setting Up MySQL : https://docs.c9.io/v1.0/docs/setting-up-mysql
   (3) Connecting PHP to MySQL:https://docs.c9.io/docs/connecting-php-to-mysql#section--step-1-setup-mysql-on-cloud-9-in-terminal-
@@ -111,7 +109,7 @@ mysql>  show databases;
 
 
 
-MySQL常用查看数据库 数据表的  【命令】  
+###MySQL常用查看数据库 数据表的  【命令】  
 标签： 数据库 的 数据表 杂谈	
 MySQL数据库查看数据库 数据表的命令。
 进入MySQL Command line client下查看当前使用的数据库:mysql>select database();mysql>status;mysql>show tables;
