@@ -75,19 +75,19 @@
 MySQL
 From the Terminal, run the following command:
 
-$ mysql-ctl install
+    $ mysql-ctl install
 The output will be:
 
-MySQL 5.5 database added.  Please make note of these credentials:
+    MySQL 5.5 database added.  Please make note of these credentials:
+    Root User: username
+    Database Name: c9
+*Now you can connect to the database using the ip 127.0.0.1 and the default port 3306. You can also test it using our tool from the Terminal:*
 
-Root User: username
-Database Name: c9
-Now you can connect to the database using the ip 127.0.0.1 and the default port 3306. You can also test it using our tool from the Terminal:
-
-$ mysql-ctl cli
-Welcome to the MySQL monitor.  Commands end with ; or \g.
-Your MySQL connection id is 24
-Server version: 5.5.37-0ubuntu0.14.04.1 (Ubuntu)
+    $ mysql-ctl cli
+    
+            Welcome to the MySQL monitor.  Commands end with ; or \g.
+            Your MySQL connection id is 24
+            Server version: 5.5.37-0ubuntu0.14.04.1 (Ubuntu)
 
 Copyright (c) 2000, 2014, Oracle and/or its affiliates. All rights reserved.
 
@@ -97,36 +97,56 @@ owners.
 
 Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
-mysql>  show databases;
-+--------------------+
-| Database           |
-+--------------------+
-| information_schema |
-| c9                 |
-| mysql              |
-| performance_schema |
-+--------------------+
-4 rows in set (0.15 sec)
+    mysql>  show databases;
+      +--------------------+
+      | Database           |
+      +--------------------+
+      | information_schema |
+      | c9                 |
+      | mysql              |
+      | performance_schema |
+      +--------------------+
+      4 rows in set (0.15 sec)
 
 
 
-###MySQL常用查看数据库 数据表的  【命令】  
-标签： 数据库 的 数据表 杂谈	
-MySQL数据库查看数据库 数据表的命令。
-进入MySQL Command line client下查看当前使用的数据库:mysql>select database();mysql>status;mysql>show tables;
-mysql>show databases;//可以查看有哪些数据库,返回数据库名(databaseName)
-mysql>use databaseName; //更换当前使用的数据库
-mysql>show tables; //返回当前数据库下的所有表的名称
-或者也可以直接用以下命令
-mysql>show tables from databaseName;//databaseName可以用show databases得来
-mysql查看表结构命令，如下:
-desc 表名;
-show columns from 表名;
-或者describe 表名;
-show create table 表名;
-或者use information_schemaselect * from columns where table_name='表名';
-查看警告：Rows matched: 1 Changed: 0 Warnings: 1mysql> show warnings;+---------+------+
-------------------------------------------
--+| Level | Code | Message |+---------+------+-------------------------------
-------------+| Warning | 1265 | Data truncated for column 'name' at row 3 |+---------+------+---------------------
-----------------------+1 row in set
+### MySQL常用查看数据库 数据表的  【命令】
+            标签： 数据库 的 数据表 杂谈	
+            MySQL数据库查看数据库 数据表的命令。
+            进入MySQL Command line client下查看当前使用的数据库:
+            `mysql>select database();`
+            
+            `mysql>status;`
+            
+            `mysql>show tables;`
+            
+            `mysql>show databases;`  //可以查看有哪些数据库,返回数据库名(databaseName)
+            
+            `mysql>use databaseName;`   //更换当前使用的数据库
+            
+            `mysql>show tables;`  //返回当前数据库下的所有表的名称
+            
+            或者也可以直接用以下命令
+            `mysql>show tables from databaseName;` //databaseName可以用show databases得来
+            
+            mysql查看表结构命令，如下:
+            `desc 表名;`
+            `show columns from 表名;`
+            
+            或者 
+            `describe 表名;`
+           ` show create table 表名;`
+           
+            或者  
+            `use information_schemaselect * from columns where table_name='表名';`
+            
+            查看警告:
+            `mysql> show warnings;`
+            Rows matched: 1 Changed: 0 Warnings: 1
+
+      +---------+------+-------------------------------------------+
+      | Level | Code | Message |
+      +---------+------+-------------------------------------------+
+      | Warning | 1265 | Data truncated for column 'name' at row 3 |
+      +---------+------+-------------------------------------------+
+      1 row in set
