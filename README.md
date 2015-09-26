@@ -1,14 +1,14 @@
 # learn-git
 学习使用Clound9 - mysql
 
-###1.Clound9网站MySQL配置
+### 1.Clound9网站MySQL配置
       hostname: 127.0.0.1
       port：3306
       user： (注册名)
       password:   
       database: c9 (cloud9数据库自带的)
 
-###2.在Terminal面板中启动和使用mysql的一般过程。
+### 2.在Terminal面板中启动和使用mysql的一般过程。
       $ mysql-ctl install;   //安装mysql数据库，已经安装则不需要执行本语句
       
       $ mysql-ctl start;  //启动mysql. 第一次启动时会创建一个空数据库
@@ -21,7 +21,7 @@
       SHOW VARIABLES WHERE Variable_name = 'hostname';  //得到hostname
 
 
-###3.测试连接数据库
+### 3.测试连接数据库
 
       <?php
      $con = mysqli_connect("127.0.0.1","用户名","密码","w3cPhpdb");//""代表密码为空，"w3cPhpdb"是数据库名
@@ -56,19 +56,20 @@
       }
       $conn->close();
 
-###4.使用Cloud9数据库mysql的教程
-  (1) Set Up a Database ：https://docs.c9.io/v1.0/docs/setup-a-database
-  (2) Setting Up MySQL : https://docs.c9.io/v1.0/docs/setting-up-mysql
-  (3) Connecting PHP to MySQL:https://docs.c9.io/docs/connecting-php-to-mysql#section--step-1-setup-mysql-on-cloud-9-in-terminal-
-  
+### 4.使用Cloud9数据库mysql的教程
+
+  链接地址如下:  
+  (1) [Set Up a Database](https://docs.c9.io/v1.0/docs/setup-a-database)<br />
+  (2) [Setting Up MySQL](https://docs.c9.io/v1.0/docs/setting-up-mysql)<br />
+  (3) [Connecting PHP to MySQL](https://docs.c9.io/docs/connecting-php-to-mysql#section--step-1-setup-mysql-on-cloud-9-in-terminal-)<br />
+            
       (3)包括Step 1: Setup MySQL on Cloud 9 (配置MySQL)
              Step 2: Create a test database (创建一个测试用数据库)
              Step 3：Get the credentials you'll need to connect to the database from PHP.
-                  得到连接php数据库需要的凭证：如 user ,password ,hostname.
-       last Step:在php文件中连接mysql数据库。(该链接的这个方法不知名原因失败，可使用上面 2. 的方法)
+             得到连接php数据库需要的凭证：如 user ,password ,hostname.
+             last Step:在php文件中连接mysql数据库。(该链接的这个方法不知名原因失败，可使用上面3 的方法)
 
 --------------------------------------------------------------
-
 
 1.Set Up a Database
 MySQL
