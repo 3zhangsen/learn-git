@@ -13,7 +13,7 @@
       
       $ mysql-ctl start;  //启动mysql. 第一次启动时会创建一个空数据库
       
-      $ mysql-ctl ;    // run the MySQL interactive shell 运行进入交互式shell脚本
+      $ mysql-ctl cli;    // run the MySQL interactive shell 运行进入交互式shell脚本
       mysql>  show databases; //显示mysql中拥有的数据库 执行 cli 后会进入 mysql> 
       mysql>  create database phptest;  //新建名字为phptest的数据库
       mysql>  use phptest;   //使用phptest数据库
